@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Testing site</title>
+</head>
+<body>
+
+	<div> Standard dices 
+
+		<div id="4sided"> <button>4-sided die </button><input type="number" id="4sidedextra"><div id="4sidedoutcome">asdsa</div></div>
+		<div id="6sided"> <button>6-sided die </button><input type="number" id="6sidedextra"></div>
+		<div id="8sided"> <button>8-sided die </button><input type="number" id="8sidedextra"></div>
+		<div id="12sided"> <button>12-sided die </button><input type="number" id="12sidedextra"></div>
+		<div id="20sided"> <button>20-sided die </button><input type="number" id="20sidedextra"></div>
+	</div>
+
+	<div> Custom dice
+	
+	<p> Number of dices </p><input type="number" id="dices" value="1"> 
+	<p> Number of sides </p><input type="number" id="sides" value="1">
+
+	<button id="test"> Randomize </button>
+
+	<p> Total outcome of the dice roll(s): <div id="total"></div></p>
+
+	<p> Each roll: <div id="rolls"></div></p> </div>
+
+</body>
+<script src="script.js"></script>
+</html>
