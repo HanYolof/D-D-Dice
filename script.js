@@ -70,3 +70,5 @@ const totalOutcomeAll = () => {
 
 const randomizeButton = document.getElementById('test').addEventListener('click', e => totalOutcomeAll() + totalOutcome());
 
+
+//
