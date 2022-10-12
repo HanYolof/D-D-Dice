@@ -33,9 +33,9 @@ const test = () => {
 
 const test2 = () => {
 	if(total != totalArray.reduce((a, b)=> a + b, 0)) {
-		console.log('bug');
+		totalArray = [total]
 	} else {
-	
+		totalArray = totalArray;
 	}
 	return totalArray
 }
@@ -56,11 +56,11 @@ const diceCustom3 = document.getElementById('test').addEventListener('click', e 
 
 const diceCustom5 = document.getElementById('test').addEventListener('click', e => totalArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value)));
 
-// const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log('total conversion', test()));
+const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log('total conversion', test()));
  
 const diceCustom4 = document.getElementById('test').addEventListener('click', e => console.log('totalArray to total', total = totalArray.reduce((a, b)=> a + b, 0)))
 
-const diceCustom6 = document.getElementById('test').addEventListener('click', e => console.log('totalArray cconversion', test2()));
+const diceCustom6 = document.getElementById('8sided').addEventListener('click', e => console.log('totalArray conversion', test2()));
 
 // test(); //Workkaa
 
