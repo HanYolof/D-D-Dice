@@ -18,17 +18,20 @@
 
 	<div> Custom dice
 	
-	<p> Number of dices </p><input type="number" id="dices" value="1"> 
-	<p> Number of sides </p><input type="number" id="sides" value="1">
-	<p> Number of +roll for each roll </p><input type="number" id="extra" value="1">
+	<p> Number of dices </p><input type="number" id="dices" min="1" value="0"> 
+	<p> Number of sides </p><input type="number" id="sides" min="1" value="0">
+	<p> Number of +roll for each roll </p><input type="number" id="extra" min="0" value="0">
 
 	<button id="custom"> Randomize </button>
+
+	
+	<div id="outcomes">
 
 	<p> Total outcome of the dice roll(s): <div id="total"></div></p>
 
 	<p> Each roll: <div id="rolls"></div></p> </div>
 
-
+	</div>
 
 </body>
 <script src="script.js" name="program"></script>
