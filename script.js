@@ -1,37 +1,19 @@
-//D&D style random dice
+//D&D Dice program
+
 //Base program ------------------------------------
 
-//Setting total to 0 - will be mutated based on roll outcomes
+//Setting variables to 0 / empty array - will be mutated based on roll outcomes
 let total = 0;
 let totalArray = [];
 
 //Dice roll function
-const diceRoll = (num) => {return 1 + Math.floor(Math.random() * num);};
+const diceRoll = (num, extra) => {return 1 + Math.floor(Math.random() * num + extra);};
 
-//Custom dice roll
-const customRoll = () => diceRoll(document.getElementById('sides').value);
+//Calculate single number total from array
 
+//Convert single number to array 
 
-//Initialize empty array and store custom rolls based on dices value
-// const emptyArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value));
-
-//This array works with button
-// const trueArray = Array.from({length:document.getElementById('dices').value}, (v = 0) => v);
-
-//Extras -----------------------------------------
-
-//Check if total is number or array and give out single value
-
-const test = () => {
-	if(typeof total === 'number') {
-		total = total;
-	} else {
-		total = totalArray.reduce((a, b)=> a + b, 0);
-	}
-	return total
-}
-
-const test2 = () => {
+const convert = () => {
 	if(total != totalArray.reduce((a, b)=> a + b, 0)) {
 		totalArray = [total]
 	} else {
@@ -40,27 +22,65 @@ const test2 = () => {
 	return totalArray
 }
 
+
+//REMOVED ------------------------------------------
+
+// const test = () => {
+// 	if(typeof total === 'number') {
+// 		total = total;
+// 	} else {
+// 		total = totalArray.reduce((a, b)=> a + b, 0);
+// 	}
+// 	return total
+// }
+
+//Extras on dices
+
+
+//Custom dice roll
+// const customRoll = () => diceRoll(document.getElementById('sides').value);
+
+//Extras -----------------------------------------
+
+//Check if total is number or array and give out single value
+
+// const test = () => {
+// 	if(typeof total === 'number') {
+// 		total = total;
+// 	} else {
+// 		total = totalArray.reduce((a, b)=> a + b, 0);
+// 	}
+// 	return total
+// }
+
+// //Converts single number to array 
+
+// const test2 = () => {
+// 	if(total != totalArray.reduce((a, b)=> a + b, 0)) {
+// 		totalArray = [total]
+// 	} else {
+// 		totalArray = totalArray;
+// 	}
+// 	return totalArray
+// }
+
 //Buttons
 
-const dice4 = document.getElementById('4sided').addEventListener('click', e => total = diceRoll(4) + Number(document.getElementById('4sidedextra').value));
-const dice6 = document.getElementById('6sided').addEventListener('click', e => total = diceRoll(6) + Number(document.getElementById('6sidedextra').value));
-const dice8 = document.getElementById('8sided').addEventListener('click', e => total = diceRoll(8) + Number(document.getElementById('8sidedextra').value));
-const dice12 = document.getElementById('12sided').addEventListener('click', e => total = diceRoll(12) + Number(document.getElementById('12sidedextra').value));
-const dice20 = document.getElementById('20sided').addEventListener('click', e => total = diceRoll(20) + Number(document.getElementById('20sidedextra').value));
+
 
 // const diceCustom = document.getElementById('test').addEventListener('click', e => console.log(emptyArray.map(x => x + customRoll(document.getElementById('dices').value), 0)));
 
 
 
-const diceCustom3 = document.getElementById('test').addEventListener('click', e => console.log('totalArray', totalArray));
+// const diceCustom3 = document.getElementById('test').addEventListener('click', e => console.log('totalArray', totalArray));
 
-const diceCustom5 = document.getElementById('test').addEventListener('click', e => totalArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value)));
+// const diceCustom5 = document.getElementById('test').addEventListener('click', e => totalArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value)));
 
-const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log('total conversion', test()));
+// const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log('total conversion', test()));
  
-const diceCustom4 = document.getElementById('test').addEventListener('click', e => console.log('totalArray to total', total = totalArray.reduce((a, b)=> a + b, 0)))
+// const diceCustom4 = document.getElementById('test').addEventListener('click', e => console.log('totalArray to total', total = totalArray.reduce((a, b)=> a + b, 0)))
 
-const diceCustom6 = document.getElementById('8sided').addEventListener('click', e => console.log('totalArray conversion', test2()));
+// const diceCustom6 = document.getElementById('8sided').addEventListener('click', e => console.log('totalArray conversion', test2()));
 
 // test(); //Workkaa
 
@@ -120,3 +140,12 @@ const diceCustom6 = document.getElementById('8sided').addEventListener('click', 
 //Calculate total outcome of the custom rolls 
 // const total = totalRolls.reduce((a, b)=> a + b, 0);
 
+//Initialize empty array and store custom rolls based on dices value
+// const emptyArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value));
+
+//This array works with button
+// const trueArray = Array.from({length:document.getElementById('dices').value}, (v = 0) => v);
+
+// //Setting total to 0 - will be mutated based on roll outcomes
+// let total = 0;
+// let totalArray = [];

@@ -9,19 +9,20 @@
 
 	<div> Standard dices 
 
-		<div> <button id="4sided" class="button">4-sided die </button><input type="number" id="4sidedextra"></div>
-		<div> <button id="6sided" class="button">6-sided die </button><input type="number" id="6sidedextra"></div>
-		<div> <button id="8sided"class="button">8-sided die </button><input type="number" id="8sidedextra"></div>
-		<div> <button id="12sided"class="button">12-sided die </button><input type="number" id="12sidedextra"></div>
-		<div> <button id="20sided"class="button">20-sided die </button><input type="number" id="20sidedextra"></div>
+		<div> <button id="4sided">4-sided die </button>
+		<div> <button id="6sided">6-sided die </button>
+		<div> <button id="8sided">8-sided die </button>
+		<div> <button id="12sided">12-sided die </button>
+		<div> <button id="20sided">20-sided die </button>
 	</div>
 
 	<div> Custom dice
 	
 	<p> Number of dices </p><input type="number" id="dices" value="1"> 
 	<p> Number of sides </p><input type="number" id="sides" value="1">
+	<p> Number of +roll for each roll </p><input type="number" id="extra" value="1">
 
-	<button id="test"class="button"> Randomize </button>
+	<button id="custom"> Randomize </button>
 
 	<p> Total outcome of the dice roll(s): <div id="total"></div></p>
 
@@ -30,5 +31,7 @@
 
 
 </body>
-<script src="script.js"></script>
+<script src="script.js" name="program"></script>
+<script src="script2.js" name="front-end"></script>
+
 </html>
