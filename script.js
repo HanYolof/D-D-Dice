@@ -9,8 +9,6 @@ let totalArray = [];
 //Dice roll function
 const diceRoll = (num, extra) => {return 1 + Math.floor(Math.random() * num + extra);};
 
-//Calculate single number total from array
-
 //Convert single number to array 
 
 const convert = () => {
@@ -21,6 +19,15 @@ const convert = () => {
 	}
 	return totalArray
 }
+
+//
+
+
+
+
+
+
+
 
 
 //REMOVED ------------------------------------------
