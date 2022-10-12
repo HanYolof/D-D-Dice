@@ -5,6 +5,7 @@
 //Setting variables to 0 / empty array - will be mutated based on roll outcomes
 let total = 0;
 let totalArray = [];
+let total2 = 0;
 
 //Dice roll function
 const diceRoll = (num, extra) => {return 1 + Math.floor(Math.random() * num + extra);};
@@ -19,6 +20,34 @@ const convert = () => {
 	}
 	return totalArray
 }
+
+//Class conversion
+
+
+class Calculator {
+	constructor(num, extra) {
+		
+		this.diceRoll = diceRoll(num, extra);
+		total = this.diceRoll;
+		
+		convert();
+		outcomeToFront();
+		outcomeToFrontArray();
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 //REMOVED ------------------------------------------
 
