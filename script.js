@@ -3,7 +3,6 @@
 
 //Setting total to 0 - will be mutated based on roll outcomes
 let total = 0;
-let totalArray = [];
 
 //Dice roll function
 const diceRoll = (num) => {return 1 + Math.floor(Math.random() * num);};
