@@ -20,18 +20,6 @@ const convert = () => {
 	return totalArray
 }
 
-//Extras
-
-
-
-
-
-
-
-
-
-
-
 //REMOVED ------------------------------------------
 
 // const test = () => {
