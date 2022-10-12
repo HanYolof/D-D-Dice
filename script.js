@@ -3,12 +3,15 @@
 
 //Setting total to 0 - will be mutated based on roll outcomes
 let total = 0;
+let totalArray = [];
 
 //Dice roll function
 const diceRoll = (num) => {return 1 + Math.floor(Math.random() * num);};
 
 //Custom dice roll
 const customRoll = () => diceRoll(document.getElementById('sides').value);
+
+
 
 //Initialize empty array and store custom rolls based on dices value
 // const emptyArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value));
@@ -39,14 +42,13 @@ const dice20 = document.getElementById('20sided').addEventListener('click', e =>
 
 // const diceCustom = document.getElementById('test').addEventListener('click', e => console.log(emptyArray.map(x => x + customRoll(document.getElementById('dices').value), 0)));
 
-const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log(test()));
+const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log('total conversion', test()));
 
-// const diceCustom3 = document.getElementById('test').addEventListener('click', e => total = trueArray.map(x => x + customRoll(document.getElementById('dices').value), 0));
-
-const diceCustom4 = document.getElementById('test').addEventListener('click', e => console.log(total));
+const diceCustom3 = document.getElementById('test').addEventListener('click', e => console.log('totalArray', totalArray));
 
 const diceCustom5 = document.getElementById('test').addEventListener('click', e => totalArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value)));
  
+const diceCustom4 = document.getElementById('test').addEventListener('click', e => console.log('totalArray to total', total = totalArray.reduce((a, b)=> a + b, 0)))
 
 // test(); //Workkaa
 
