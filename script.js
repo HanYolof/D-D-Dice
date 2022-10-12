@@ -5,7 +5,6 @@
 //Setting variables to 0 / empty array - will be mutated based on roll outcomes
 let total = 0;
 let totalArray = [];
-let total2 = 0;
 
 //Dice roll function
 const diceRoll = (num, extra) => {return 1 + Math.floor(Math.random() * num + extra);};
