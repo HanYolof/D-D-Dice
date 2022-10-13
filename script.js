@@ -7,34 +7,23 @@ let total = 0;
 let totalArray = [];
 
 //Dice roll function
-const diceRoll = (num, extra) => {return 1 + Math.floor(Math.random() * num + extra);};
-
-//Convert single number to array 
-
-const convert = () => {
-	if(total != totalArray.reduce((a, b)=> a + b, 0)) {
-		totalArray = [total]
+const diceRoll = (num, extra) => 
+	{if(num == 0){
+	return Math.floor(Math.random() * num + extra);
 	} else {
-		totalArray = totalArray;
+	return 1 + Math.floor(Math.random() * num + extra);
 	}
-	return totalArray
-}
+};
 
-//Class conversion
-
+//Calculator
 
 class Calculator {
 	constructor(num, extra) {
-		
-		this.diceRoll = diceRoll(num, extra);
-		total = this.diceRoll;
-		
-		convert();
-		outcomeToFront();
-		outcomeToFrontArray();
-
+		this.total = diceRoll(num, extra);
+		total = this.total;
+		totalArray = [total]
 	}
-}
+};
 
 
 
@@ -49,6 +38,19 @@ class Calculator {
 
 
 //REMOVED ------------------------------------------
+
+
+//Convert single number to array 
+
+// const convert = () => {
+// 	if(total != totalArray.reduce((a, b)=> a + b, 0)) {
+// 		totalArray = [total];
+// 	} else {
+// 		totalArray = totalArray;
+// 	}
+// 	return totalArray;
+// }
+
 
 // const test = () => {
 // 	if(typeof total === 'number') {

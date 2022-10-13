@@ -3,28 +3,29 @@
 //Buttons
 
 //Toimii
-//const diceCustom = document.getElementById('custom').addEventListener('click', () => {totalArray = Array.from({length:document.getElementById('dices').value},() => diceRoll(document.getElementById('sides').value, Number(document.getElementById('extra').value)));total = totalArray.reduce((a, b)=> a + b, 0);outcomeToFront();outcomeToFrontArray();});
+const diceCustom = document.getElementById('custom').addEventListener('click', () => {totalArray = Array.from({length:document.getElementById('dices').value},() => diceRoll(document.getElementById('sides').value, Number(document.getElementById('extra').value)));total = totalArray.reduce((a, b)=> a + b, 0);outcomeToFront();outcomeToFrontArray();});
 
 //Ei toimi
-const diceCustom = document.getElementById('custom').addEventListener('click', () => totalArray = Array.from({length:document.getElementById('dices').value}, () => new Calculator(document.getElementById('sides').value, Number(document.getElementById('extra').value))));
+// const diceCustom = document.getElementById('custom').addEventListener('click', () => totalArray = Array.from({length:document.getElementById('dices').value}, () => new Calculator(document.getElementById('sides').value, Number(document.getElementById('extra').value))));
 
 //Toimii
-const calculator4 = document.getElementById('4sided').addEventListener('click', () => new Calculator(4, Number(document.getElementById('extra').value)));
-const calculator6 = document.getElementById('6sided').addEventListener('click', () => new Calculator(6, Number(document.getElementById('extra').value)));
-const calculator8 = document.getElementById('8sided').addEventListener('click', () => new Calculator(8, Number(document.getElementById('extra').value)));
-const calculator12 = document.getElementById('12sided').addEventListener('click', () => new Calculator(12, Number(document.getElementById('extra').value)));
-const calculator20 = document.getElementById('20sided').addEventListener('click', () => new Calculator(20, Number(document.getElementById('extra').value)));
+const calculator4 = document.getElementById('4sided').addEventListener('click', () => {new Calculator(4, Number(document.getElementById('extra').value)); outcomeToFront();outcomeToFrontArray()});
+const calculator6 = document.getElementById('6sided').addEventListener('click', () => {new Calculator(6, Number(document.getElementById('extra').value)); outcomeToFront();outcomeToFrontArray()});
+const calculator8 = document.getElementById('8sided').addEventListener('click', () => {new Calculator(8, Number(document.getElementById('extra').value)); outcomeToFront();outcomeToFrontArray()});
+const calculator12 = document.getElementById('12sided').addEventListener('click', () => {new Calculator(12, Number(document.getElementById('extra').value)); outcomeToFront();outcomeToFrontArray()});
+const calculator20 = document.getElementById('20sided').addEventListener('click', () => {new Calculator(20, Number(document.getElementById('extra').value)); outcomeToFront();outcomeToFrontArray()});
+
 
 
 //Calculations to front end
 
 const outcomeToFront = () => {
 	totalToFront = document.getElementById('total').appendChild(document.createTextNode('p'));
-	totalToFront.textContent = total + "-";}
+	totalToFront.textContent = total + "-";};
 
 const outcomeToFrontArray = () => {
 	totalToFrontArray = document.getElementById('rolls').appendChild(document.createTextNode('p'));
-	totalToFrontArray.textContent = totalArray + "-";}
+	totalToFrontArray.textContent = totalArray + "-";};
 
 
 //REMOVALS
