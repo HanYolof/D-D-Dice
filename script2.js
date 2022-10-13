@@ -3,10 +3,10 @@
 //Buttons
 
 //Toimii
-const diceCustom = document.getElementById('custom').addEventListener('click', () => {totalArray = Array.from({length:document.getElementById('dices').value},() => diceRoll(document.getElementById('sides').value, Number(document.getElementById('extra').value)));total = totalArray.reduce((a, b)=> a + b, 0);outcomeToFront();outcomeToFrontArray();});
+// const diceCustom = document.getElementById('custom').addEventListener('click', () => {totalArray = Array.from({length:document.getElementById('dices').value},() => diceRoll(document.getElementById('sides').value, Number(document.getElementById('extra').value)));total = totalArray.reduce((a, b)=> a + b, 0);outcomeToFront();outcomeToFrontArray();});
 
-//Ei toimi
-// const diceCustom = document.getElementById('custom').addEventListener('click', () => totalArray = Array.from({length:document.getElementById('dices').value}, () => new Calculator(document.getElementById('sides').value, Number(document.getElementById('extra').value))));
+//Ei toimi - toimii osittain
+const diceCustom = document.getElementById('custom').addEventListener('click', () => {totalArray = Array.from({length:document.getElementById('dices').value}, () => new Calculator(document.getElementById('sides').value, Number(document.getElementById('extra').value))); test2();});
 
 //Toimii
 const calculator4 = document.getElementById('4sided').addEventListener('click', () => {new Calculator(4, Number(document.getElementById('extra').value)); outcomeToFront();outcomeToFrontArray()});

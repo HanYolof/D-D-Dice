@@ -5,6 +5,7 @@
 //Setting variables to 0 / empty array - will be mutated based on roll outcomes
 let total = 0;
 let totalArray = [];
+let str = [];
 
 //Dice roll function
 const diceRoll = (num, extra) => 
@@ -15,13 +16,37 @@ const diceRoll = (num, extra) =>
 	}
 };
 
+const test = () => {
+	for(let i=0; i<totalArray.length;i++){
+		console.log(totalArray[i].total || totalArray[i])}};
+
+//Tää on rikki - Jussi auta!!! (str = Array({length:totalArray.length}), ()=>) toi ei toimi ku en keksi mite siihe saatas nii et se mappaa sen totalArray[i].totalin sinne
+
+
+const test2 = () => {
+	for(let i=0; i<totalArray.length;i++){
+
+		if(totalArray.length > 1) {
+			str.push(totalArray[i].total)		
+		}
+		else{
+			str = totalArray[i];
+		}
+	}
+}
+
+
+
 //Calculator
 
 class Calculator {
 	constructor(num, extra) {
 		this.total = diceRoll(num, extra);
 		total = this.total;
-		totalArray = [total]
+		totalArray = total ? [].concat(total) : [];
+		
+		test();
+
 	}
 };
 
