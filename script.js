@@ -20,7 +20,7 @@ const test = () => {
 	for(let i=0; i<totalArray.length;i++){
 		console.log(totalArray[i].total || totalArray[i])}};
 
-//Tää on rikki - Jussi auta!!! (str = Array({length:totalArray.length}), ()=>) toi ei toimi ku en keksi mite siihe saatas nii et se mappaa sen totalArray[i].totalin sinne
+//Tää on rikki - apu kelpaa!!! (str = Array({length:totalArray.length}), ()=>) toi ei toimi ku en keksi mite siihe saatas nii et se mappaa sen totalArray[i].totalin sinne
 
 
 const test2 = () => {
