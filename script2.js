@@ -1,5 +1,9 @@
 //D&D Dice front end elements
 
+let dices = document.getElementById('dices').value;
+let sides = document.getElementById('sides').value;
+let extras = document.getElementById('extras').value;
+
 //Elements having effects with front end
 
 //Add listeners to page on load
