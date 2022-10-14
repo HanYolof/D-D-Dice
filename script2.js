@@ -3,27 +3,15 @@
 //Elements having effects with front end
 
 //Add listeners to page on load
-window.addEventListener('load', () => {buttonPressed(); activateCalculators()});
+window.addEventListener('load', () => buttonPressed());
 
 //Map all buttons to NodeList
 const buttons = document.querySelectorAll('button');
 
-//Add listener -> Make activeButton = button pressed
+//Add listeners 
 const buttonPressed = () => {
 for(let i=0; i<buttons.length;i++) {
-	buttons[i].addEventListener('click', (evt) => activeButton = evt.target)
-}};
-
-//Add listener -> activate Calculators
-const activateCalculators = () => {
-for(let i=0; i<buttons.length;i++) {
-	buttons[i].addEventListener('click', (evt) => activeCalculator = new Calculator)
-}};
-
-//Add listener -> Move totals to front end
-const moveTotalsToFront = () => {
-for(let i=0; i<buttons.length;i++) {
-	buttons[i].addEventListener('click', (evt) => {totalToFront(); totalToFrontArray();})
+	buttons[i].addEventListener('click', (evt) => {activeButton = evt.target; activeCalculator = new Calculator; totalToFront(); totalToFrontArray();})
 }};
 
 //Capture input values (needs fixing to work live)
