@@ -61,8 +61,6 @@ const diceRoll = (num, extra) =>
 
 class Calculator{
 	constructor(num, extra) {
-		
-		let total = 0;
 
 		this.array = arrayBuilder();
 
