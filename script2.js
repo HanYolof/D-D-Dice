@@ -21,7 +21,7 @@ for(let i=0; i<buttons.length;i++) {
 }};
 
 //Add listener -> Move totals to front end
-const activateCalculators = () => {
+const moveTotalsToFront = () => {
 for(let i=0; i<buttons.length;i++) {
 	buttons[i].addEventListener('click', (evt) => {totalToFront(); totalToFrontArray();})
 }};
