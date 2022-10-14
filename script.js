@@ -1,110 +1,80 @@
-//D&D style random dice
-//Base program ------------------------------------
+//D&D Dice program
 
-//Setting total to 0 - will be mutated based on roll outcomes
-let total = 0;
-let totalArray = [];
+//Base program
 
-//Dice roll function
-const diceRoll = (num) => {return 1 + Math.floor(Math.random() * num);};
+//Array builder
 
-//Custom dice roll
-const customRoll = () => diceRoll(document.getElementById('sides').value);
+const arrayBuilder = () => {
 
+	let totalArray = [];	
 
-
-//Initialize empty array and store custom rolls based on dices value
-// const emptyArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value));
-
-//This array works with button
-// const trueArray = Array.from({length:document.getElementById('dices').value}, (v = 0) => v);
-
-//Extras -----------------------------------------
-
-//Check if total is number or array and give out single value
-
-const test = () => {
-	if(typeof total === 'number') {
-		total = total;
+	if(activeButton.id == "custom") {
+		totalArray = Array.from({length:dices}).fill(0);
 	} else {
-		total = totalArray.reduce((a, b)=> a + b, 0);
+		totalArray = [1].fill(0);
 	}
-	return total
-}
+	return totalArray;
+};
 
-//Buttons
+//Value capturation
 
-const dice4 = document.getElementById('4sided').addEventListener('click', e => total = diceRoll(4) + Number(document.getElementById('4sidedextra').value));
-const dice6 = document.getElementById('6sided').addEventListener('click', e => total = diceRoll(6) + Number(document.getElementById('6sidedextra').value));
-const dice8 = document.getElementById('8sided').addEventListener('click', e => total = diceRoll(8) + Number(document.getElementById('8sidedextra').value));
-const dice12 = document.getElementById('12sided').addEventListener('click', e => total = diceRoll(12) + Number(document.getElementById('12sidedextra').value));
-const dice20 = document.getElementById('20sided').addEventListener('click', e => total = diceRoll(20) + Number(document.getElementById('20sidedextra').value));
+const valueCapture = () => {
 
-// const diceCustom = document.getElementById('test').addEventListener('click', e => console.log(emptyArray.map(x => x + customRoll(document.getElementById('dices').value), 0)));
+	let num = 0;
 
-const diceCustom2 = document.getElementById('test').addEventListener('click', e => console.log('total conversion', test()));
+	switch(activeButton.id) {
+		case "custom":
+		num = Number(sides);
+		break;
+		case "4sided":
+		num = 4;
+		break;
+		case "6sided":
+		num = 6;
+		break;
+		case "8sided":
+		num = 8;
+		break;
+		case "12sided":
+		num = 12;
+		break;
+		case "20sided":
+		num = 20;
+		break;
+		default:
+		num = 0;
+	}
 
-const diceCustom3 = document.getElementById('test').addEventListener('click', e => console.log('totalArray', totalArray));
+	return num;
+};
 
-const diceCustom5 = document.getElementById('test').addEventListener('click', e => totalArray = Array.from({length:document.getElementById('dices').value}, () => customRoll(document.getElementById('dices').value)));
- 
-const diceCustom4 = document.getElementById('test').addEventListener('click', e => console.log('totalArray to total', total = totalArray.reduce((a, b)=> a + b, 0)))
+//Dice roll 
+const diceRoll = (num, extra) => 
+	{if(num == 0){
+	return Math.floor(Math.random() * num + extra);
+	} else {
+	return 1 + Math.floor(Math.random() * num + extra);
+	}
+};
 
-// test(); //Workkaa
+//Calculator
 
+class Calculator{
+	constructor(num, extra) {
+		
+		let total = 0;
 
-// console.log(total);
-// console.log(totalRolls);
+		this.array = arrayBuilder();
 
+		this.numberOfSides = valueCapture();
+		num = this.numberOfSides;
 
-//To HTML code
+		this.extra = Number(extras);
+		extra = this.extra;
 
-// const totalOutcome = () => {
-// 	let totalToFront = document.getElementById('total').appendChild(document.createElement('p'));
-// 	totalToFront.textContent = total;
-// };
+		this.customDice = this.array.map((a) => diceRoll(num, extra));
 
-// const totalOutcomeAll = () => {
-// 	let totalAllToFront = document.getElementById('rolls').appendChild(document.createElement('p'));
-// 	totalAllToFront.textContent = diceCustom;
-// };
-
-// const randomizeButton = document.querySelector('button').addEventListener('click', e => totalOutcome());
-
-
-// Removals --------------------------
-
-// const dices = document.getElementById('dices').value;
-// const sides = document.getElementById('sides').value;
-
-//Legacy - alternative to custom dice rolls array---
-
-//Initialize array for total rolls
-// totalRolls = [];
-
-//For loop to push the custom dice roll values to the array
-// for(let i=0; i<dices;i++){totalRolls.push((customRoll(dices)));};
-
-//Standard roll calculcations ----------------------
-
-//Standard rolls based on D&D dices
-// const rollDice4 = () => diceRoll(4);
-// const rollDice6 = () => diceRoll(6);
-// const rollDice8 = () => diceRoll(8);
-// const rollDice12 = () => diceRoll(12);
-// const rollDice20 = () => diceRoll(20);
-
-// const diceCustom = document.getElementById('test').addEventListener('click', e => console.log(diceRoll(document.getElementById('sides').value)));
-
-
-//Array to map the real values
-
-//Tää saatiin toimii nii et se randomizee uusiks joka button pressil
-
-// const totalRolls = emptyArray.map(x => x + customRoll(document.getElementById('dices').value), 0);
-
-//Tää ei viel toimi
-
-//Calculate total outcome of the custom rolls 
-// const total = totalRolls.reduce((a, b)=> a + b, 0);
+		this.total = this.customDice.reduce((a, b)=> a + b, 0);	
+	}
+};
 
