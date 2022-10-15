@@ -15,7 +15,7 @@ const buttons = document.querySelectorAll('button');
 //Add listener -> Make activeButton = button pressed
 const buttonPressed = () => {
 for(let i=0; i<buttons.length;i++) {
-	buttons[i].addEventListener('click', (evt) => {activeButton = evt.target; activeCalculator = new Calculator; totalToFront(); totalToFrontArray();})
+	buttons[i].addEventListener('click', (evt) => {activeButton = evt.target; activeCalculator = new Calculator; totalToFront(); totalToFrontArray();datalist();})
 }};
 
 //Capture input values and set listeners
@@ -37,3 +37,12 @@ const totalToFront = () => {
 const totalToFrontArray = () => {
 	let totalToFrontArray = document.getElementById('rolls').appendChild(document.createTextNode('p'));
 	totalToFrontArray.textContent = activeCalculator.customDice + "-"};
+
+const datalist = () => {
+	let selectList = document.getElementById('select');
+
+	for(item of activeCalculator.customDice) {
+		let purkkaviritys = selectList.options = new Option(item)
+		selectList.appendChild(purkkaviritys)
+	}
+	};
