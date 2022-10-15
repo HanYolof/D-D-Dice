@@ -42,7 +42,7 @@ const datalist = () => {
 	let selectList = document.getElementById('select');
 
 	for(item of activeCalculator.customDice) {
-		let purkkaviritys = selectList.options = new Option(item)
+		let purkkaviritys = selectList.options = new Option(item, 'x', true, true)
 		selectList.appendChild(purkkaviritys)
 	}
 	};
