@@ -5,11 +5,10 @@
 //Array builder
 
 const arrayBuilder = () => {
+	let totalArray = [];
 
-	let totalArray = [];	
-
-	if(activeButton.id == "custom") {
-		totalArray = Array.from({length:dices}).fill(0);
+	if (activeButton.id == "custom") {
+		totalArray = Array.from({ length: dices }).fill(0);
 	} else {
 		totalArray = [1].fill(0);
 	}
@@ -19,49 +18,47 @@ const arrayBuilder = () => {
 //Value capturation
 
 const valueCapture = () => {
-
 	let num = 0;
 
-	switch(activeButton.id) {
+	switch (activeButton.id) {
 		case "custom":
-		num = Number(sides);
-		break;
+			num = Number(sides);
+			break;
 		case "4sided":
-		num = 4;
-		break;
+			num = 4;
+			break;
 		case "6sided":
-		num = 6;
-		break;
+			num = 6;
+			break;
 		case "8sided":
-		num = 8;
-		break;
+			num = 8;
+			break;
 		case "12sided":
-		num = 12;
-		break;
+			num = 12;
+			break;
 		case "20sided":
-		num = 20;
-		break;
+			num = 20;
+			break;
 		default:
-		num = 0;
+			num = 0;
 	}
 
 	return num;
 };
 
-//Dice roll 
-const diceRoll = (num, extra) => 
-	{if(num == 0){
-	return Math.floor(Math.random() * num + extra);
+//Dice roll
+const diceRoll = (num, extra) => {
+	if (num == 0) {
+		return Math.floor(Math.random() * num + extra);
 	} else {
-	return 1 + Math.floor(Math.random() * num + extra);
+		return 1 + Math.floor(Math.random() * num + extra);
 	}
 };
 
 //Calculator
 
-class Calculator{
+class Calculator {
 	constructor(num, extra) {
-
 		this.array = arrayBuilder();
 
 		this.numberOfSides = valueCapture();
@@ -72,7 +69,6 @@ class Calculator{
 
 		this.customDice = this.array.map((a) => diceRoll(num, extra));
 
-		this.total = this.customDice.reduce((a, b)=> a + b, 0);	
+		this.total = this.customDice.reduce((a, b) => a + b, 0);
 	}
-};
-
+}
